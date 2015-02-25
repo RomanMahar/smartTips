@@ -12,5 +12,5 @@ $.fn.wrapInTag = function(opts) {
 
 $('p').wrapInTag({
   tag: 'span class="pos"',
-  words: ['world', 'and red']
+  words: ['world', 'and red', 'Lorem']
 });
