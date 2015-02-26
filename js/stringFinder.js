@@ -41,7 +41,7 @@ I should be able to call the right text in the tooltip
 // Next the following function is to make a tooltip div show up on hover
 $('span.jargon').on('mouseenter', function(){
 	$(this).addClass('animate');
-	var tip = $('<div>').addClass('tooltip').fadeIn( 1000 );
+	var tip = $('<div>').addClass('tooltip').fadeIn( 300 );
 	$(this).append(tip);
 // this chains another .on event 
 }).on('mouseleave', function (){
