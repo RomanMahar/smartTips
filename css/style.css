@@ -1,0 +1,22 @@
+.jargon {
+	position: relative;
+	color: red;
+	font-size: 2em;
+	cursor: pointer;
+}
+
+.tooltip {
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	height: 100px;
+	width: 100px;
+	transform: translateX(-50%);
+	background: rgba(0,0,0,0.5);
+}
+
+/*
+span.jargon:hover .tooltip  {
+	opacity: 1;
+}
+*/
