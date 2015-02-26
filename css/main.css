@@ -1,0 +1,43 @@
+@charset "UTF-8";
+.wrapper {
+  color: #BADA55;
+  width: 1000px;
+  border: 2px solid white; }
+  .wrapper a {
+    color: #f44008; }
+  .wrapper li {
+    border: solid #f44008 10px;
+    background: #BADA55; }
+
+body {
+  color: #f44008;
+  padding: 100px; }
+
+.jargon {
+  position: relative;
+  color: red;
+  font-size: 2em;
+  cursor: pointer; }
+
+.trademark {
+  -webkit-transform: rotate(3deg);
+      -ms-transform: rotate(3deg);
+          transform: rotate(3deg);
+  display: inline-block; }
+
+.trademark:after {
+  content: '™';
+  color: rgba(21, 21, 21, 0.5); }
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  height: 100px;
+  width: 100px;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.75);
+  font-size: 0.5em;
+  color: white; }

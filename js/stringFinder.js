@@ -56,7 +56,7 @@ var definitions = {
 
 /* If I'm correct... which I'm probably not... 
 then this should save the smartTipText var as the text*/
-var smartTipText = $('definitions').text();
+// var smartTipText = $('definitions').text();
 
 // I am missing a function that looks for text.this and stuff
 // var str = $( "p:first" ).text();

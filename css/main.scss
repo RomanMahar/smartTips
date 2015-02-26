@@ -1,0 +1,54 @@
+$green : #BADA55;
+$rouge : #f44008;
+$width : 1000px;
+$smartTipBrdr: solid $rouge 10px;
+
+.wrapper {
+	color: $green;
+	width: $width;
+	border: 2px solid lighten($green, 50%);
+	a {
+		color: $rouge;
+	}
+	li {
+		border: $smartTipBrdr;
+		background: $green;
+	}
+}
+
+body {
+	color : $rouge;
+	padding: 100px;
+}
+
+
+.jargon {
+	position: relative;
+	color: red;
+	font-size: 2em;
+	cursor: pointer;
+}
+
+
+.trademark {
+	transform: rotate(3deg);
+	display: inline-block;
+}
+
+.trademark:after {
+	content: '™';
+	color: rgba(21,21,21,0.5);
+}
+
+.tooltip {
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	height: 100px;
+	width: 100px;
+	transform: translateX(-50%);
+	background: rgba(0,0,0,0.75);
+	font-size: 0.5em;
+	color: white;
+}
+
