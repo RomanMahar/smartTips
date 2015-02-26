@@ -20,8 +20,71 @@ $.fn.wrapInTag = function(opts) {
 
 $('p').wrapInTag({
   tag: 'span class="jargon"',
-  words: ['world', 'and red', 'Lorem', 'i ']
+  words: ['world', 'and red', 'Lorem', 'qui', 'smartTips']
 });
+
+
+$.fn.appendTrademark = function(tm) {
+  
+  var tag = tm.tag || 'strong',
+      words = tm.words || [],
+      regex = RegExp(words.join('|'), 'gi'),
+      replacement = '<'+ tag +'>$&</'+ tag +'>';
+  
+  return this.html(function() {
+    return $(this).text().replace(regex, replacement);
+  });
+};
+
+$('span.jargon').appendTrademark({
+  tag: 'span class="trademark"',
+  words: ['smartTips']
+});
+
+
+
+
+// $('p').wrapInTag({
+//   tag: 'span class="jargon"',
+//   words: definitions
+// });
+
+var definitions = {
+	lorem : "A genuine mark of class",
+	qui : "Icy and unforgiving"
+}
+
+/* If I'm correct... which I'm probably not... 
+then this should save the smartTipText var as the text*/
+var smartTipText = $('definitions').text();
+
+// I am missing a function that looks for text.this and stuff
+// var str = $( "p:first" ).text();
+// $( "p:last" ).html( str );
+
+
+$('span.jargon').on('mouseenter', function(){
+	$(this).addClass('animate');
+	var tip = $('<div>').addClass('tooltip').fadeIn( 300 );
+	// this next line is meant to store the string within span so that we can search it
+	var thisString = $(this).text().toLowerCase();
+	console.log(thisString);
+	$(this).append(tip.text(definitions[thisString]));
+
+// this chains another .on event 
+}).on('mouseleave', function (){
+	console.log("hi!");
+	$(this).removeClass('animate');
+	$(this).find(".tooltip").remove();
+});
+
+
+
+// var employees = [
+//     {"firstName":"John", "lastName":"Doe"},
+//     {"firstName":"Anna", "lastName":"Smith"},
+//     {"firstName":"Peter","lastName": "Jones"}
+// ];
 
 /* 
 The following comments/notes were written by Ryan while he sat with me. 
@@ -39,59 +102,3 @@ I should be able to call the right text in the tooltip
 // On the note of what's written above I will next have to figure out how to define and store these terms
 
 // Next the following function is to make a tooltip div show up on hover
-$('span.jargon').on('mouseenter', function(){
-	$(this).addClass('animate');
-	var tip = $('<div>').addClass('tooltip').fadeIn( 300 );
-	$(this).append(tip);
-// this chains another .on event 
-}).on('mouseleave', function (){
-	console.log("hi!");
-	$(this).removeClass('animate');
-	$(this).find(".tooltip").remove();
-});
-
-
-
-// $( "#clickme" ).click(function() {
-//   $( "#book" ).animate({
-//     opacity: 0.25,
-//     left: "+=50",
-//     height: "toggle"
-//   }, 5000, function() {
-//     // Animation complete.
-//   });
-// });
-
-// .animate({
-// 	opacity: 1
-// }, 1000)
-
-/*
-
-musicApp.displaySongs = function(result){
-	$('#artwork').html('');
-	console.log("Ready to try displaying pieces");
-	var songs = result.response.songs;
-	// we now have an array of pieces, we need to loop through each one and display them
-	// this will incrementally display them
-	for(var i = 0; i < songs.length; i++){
-		// create html element div with a class of piece
-		var div = $('<div>').addClass('piece');
-		// create an h2 element and set the title to be the current work title
-		var h2 = $('<h2>').text(songs[i].title);
-		// create a p with the class of artist and set the text to be artist
-		var p = $('<p>').text(songs[i].artist_name).addClass('artist');
-			div.append(h2,p);
-			$('#artwork').append(div);
-
-		// check if theres an image.... and if there is create it and specify the source
-		// if(pieces[i].webImage){
-		// 	var image = $('<img>').attr('src',pieces[i].webImage.url);
-		// // put the image in the place
-		// div.append(image);
-		// }
-		
-	} // end for loop
-} // end musicApp.displayPieces();
-
-*/

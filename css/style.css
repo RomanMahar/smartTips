@@ -1,8 +1,17 @@
+body {
+	padding: 100px;
+}
+
 .jargon {
 	position: relative;
 	color: red;
 	font-size: 2em;
 	cursor: pointer;
+}
+
+.trademark:after {
+	content: '™';
+	color: rgba(21,21,21,0.5);
 }
 
 .tooltip {
@@ -12,7 +21,9 @@
 	height: 100px;
 	width: 100px;
 	transform: translateX(-50%);
-	background: rgba(0,0,0,0.5);
+	background: rgba(0,0,0,0.75);
+	font-size: 0.5em;
+	color: white;
 }
 
 /*
