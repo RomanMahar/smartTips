@@ -47,15 +47,10 @@ $('span.jargon').on('mouseenter', function(){
 }).on('mouseleave', function (){
 	console.log("hi!");
 	$(this).removeClass('animate');
-	$(this).find(".tooltip").fadeOut(600, function(){	
-	$(this).find("div.tooltip").remove();
-	console.log("no Wayyy!!!!");
-	});
+	$(this).find(".tooltip").remove();
 });
 
- $( "#book" ).fadeOut( "slow", function() {
-    // Animation complete.
-  });
+
 
 // $( "#clickme" ).click(function() {
 //   $( "#book" ).animate({
