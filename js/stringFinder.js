@@ -51,7 +51,8 @@ $('span.jargon').appendTrademark({
 
 var definitions = {
 	lorem : "A genuine mark of class",
-	qui : "Icy and unforgiving"
+	qui : "Icy and unforgiving",
+	smarttips: "This is this thingy"
 }
 
 /* If I'm correct... which I'm probably not... 
