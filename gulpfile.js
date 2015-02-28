@@ -33,7 +33,7 @@ gulp.task('styles', function() {
 gulp.task('templates', function(){
 	gulp.src('templates/*.jade')
 	.pipe(jade({ pretty : true }))
-	.pipe(gulp.dest('./html'))
+	.pipe(gulp.dest('.'))
 });
 
 gulp.task('browser-sync', function() {
