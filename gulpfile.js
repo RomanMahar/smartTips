@@ -47,5 +47,5 @@ gulp.task('watch', function() {
 	gulp.watch('js/**/*.js', ['jshint']);
 	gulp.watch('css/**/*.scss', ['styles']);
 	gulp.watch('**/*.html', reload);
-	gulp.watch('templates/*.jade', ['templates']);
+	// gulp.watch('templates/*.jade', ['templates']);
 });

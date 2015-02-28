@@ -1,53 +1,34 @@
-$green : #BADA55;
-$rouge : #f44008;
-$width : 1000px;
-$smartTipBrdr: solid $rouge 10px;
+@import '_smartTip.scss';
+@import '_setup.scss';
+
+// Variables 
+$smartTip : #f44008;
+$smartTipBrdr: solid  10px;
+
+@mixin width {
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
 
 .wrapper {
-	width: $width;
-	border: 2px solid lighten($green, 50%);
+    @include width;
 	a {
-		color: $rouge;
+		text-decoration: none;
 	}
 	li {
-		border: $smartTipBrdr;
-		background: $green;
 	}
+}
+
+.content {
+
 }
 
 body {
-	// color : $rouge;
 	padding: 100px;
 }
 
-.smartTip {
-	position: relative;
-	color: red;
-	font-size: 2em;
-	cursor: pointer;
-}
 
-
-.trademark {
-	transform: rotate(3deg);
-	display: inline-block;
-}
-
-.trademark:after {
-	content: '™';
-	color: rgba(21,21,21,0.5);
-}
-
-.tooltip {
-	position: absolute;
-	padding: 5px;
-	bottom: 100%;
-	left: 50%;
-	height: 100px;
-	width: 100px;
-	transform: translateX(-50%);
-	background: rgba(0,0,0,0.75);
-	font-size: 0.5em;
-	color: white;
-}
 

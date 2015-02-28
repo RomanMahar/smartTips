@@ -1,0 +1,38 @@
+// _smartTip.scss
+// Contains styles for smartTips highlighter and tooltip popup
+
+$smartTip : #f44008;
+.smartTip {
+	position: relative;
+	color: $smartTip;
+	cursor: pointer;
+}
+
+
+.tooltip {
+	position: absolute;
+	padding: 15px;
+	bottom: 100%;
+	left: 50%;
+	width: 200px;
+	transform: translateX(-50%);
+	background: rgba(0,0,0,0.75);
+	font-size: 16px;
+	font-weight: normal;
+	color: white;
+}
+
+
+// Additional styling types for trademark
+// see smartTips.js file to view input options.
+.trademark {
+	transform: rotate(3deg);
+	display: inline-block;
+}
+
+.trademark:after {
+	content: '!';
+	vertical-align: top;
+	font-size: 0.6em;
+	color: rgba(21,21,21,0.5);
+}
