@@ -5,6 +5,7 @@ var gulp   = require('gulp'),
 		minifycss = require('gulp-minify-css'),
 		rename = require('gulp-rename'),
 		browserSync = require('browser-sync'),
+		jade = require('gulp-jade'),
 		reload      = browserSync.reload;
 
 gulp.task('default', ['browser-sync', 'jshint', 'styles', 'watch']);
@@ -29,6 +30,12 @@ gulp.task('styles', function() {
 		.pipe(reload({stream: true}));
 });
 
+gulp.task('templates', function(){
+	gulp.src('templates/*.jade')
+	.pipe(jade({ pretty : true }))
+	.pipe(gulp.dest('./html'))
+});
+
 gulp.task('browser-sync', function() {
 	browserSync({
 		server: { baseDir: "./" }
@@ -40,4 +47,5 @@ gulp.task('watch', function() {
 	gulp.watch('js/**/*.js', ['jshint']);
 	gulp.watch('css/**/*.scss', ['styles']);
 	gulp.watch('**/*.html', reload);
+	gulp.watch('templates/*.jade', ['templates']);
 });

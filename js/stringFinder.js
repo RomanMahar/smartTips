@@ -4,12 +4,21 @@ $(function() {
 });
 // end document ready
 
+// Our list of terms and their corresponding definitions
+var definitions = {
+	lorem : "A mark of class",
+	qui : "Icy and unforgiving",
+	smarttips: "This is "
+}
+
+
 
 // This function will find the strings in "words :" and surround them with a span tag
 $.fn.wrapInTag = function(opts) {
   
   var tag = opts.tag || 'strong',
-      words = opts.words || [],
+  // Here we are passing the 'Keys' from the definitions object
+      words = Object.keys(opts.definitions) || [],
       regex = RegExp(words.join('|'), 'gi'),
       replacement = '<'+ tag +'>$&</'+ tag +'>';
   
@@ -19,8 +28,9 @@ $.fn.wrapInTag = function(opts) {
 };
 
 $('p').wrapInTag({
-  tag: 'span class="jargon"',
-  words: ['world', 'and red', 'Lorem', 'qui', 'smartTips']
+  tag: 'span class="smartTip"',
+  // applies Span tag to definition keys
+  definitions : definitions
 });
 
 
@@ -36,35 +46,15 @@ $.fn.appendTrademark = function(tm) {
   });
 };
 
-$('span.jargon').appendTrademark({
+$('span.smartTip').appendTrademark({
   tag: 'span class="trademark"',
   words: ['smartTips']
 });
 
 
 
-
-// $('p').wrapInTag({
-//   tag: 'span class="jargon"',
-//   words: definitions
-// });
-
-var definitions = {
-	lorem : "A genuine mark of class",
-	qui : "Icy and unforgiving",
-	smarttips: "This is this thingy"
-}
-
-/* If I'm correct... which I'm probably not... 
-then this should save the smartTipText var as the text*/
-// var smartTipText = $('definitions').text();
-
-// I am missing a function that looks for text.this and stuff
-// var str = $( "p:first" ).text();
-// $( "p:last" ).html( str );
-
-
-$('span.jargon').on('mouseenter', function(){
+// This activates the tooltip when the mouse enters the smartTip span
+$('span.smartTip').on('mouseenter', function(){
 	$(this).addClass('animate');
 	var tip = $('<div>').addClass('tooltip').fadeIn( 300 );
 	// this next line is meant to store the string within span so that we can search it

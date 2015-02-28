@@ -12,7 +12,7 @@
 body {
   padding: 100px; }
 
-.jargon {
+.smartTip {
   position: relative;
   color: red;
   font-size: 2em;
@@ -30,6 +30,7 @@ body {
 
 .tooltip {
   position: absolute;
+  padding: 5px;
   bottom: 100%;
   left: 50%;
   height: 100px;
