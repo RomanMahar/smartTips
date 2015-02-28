@@ -4,7 +4,6 @@ $width : 1000px;
 $smartTipBrdr: solid $rouge 10px;
 
 .wrapper {
-	color: $green;
 	width: $width;
 	border: 2px solid lighten($green, 50%);
 	a {
@@ -20,7 +19,6 @@ body {
 	// color : $rouge;
 	padding: 100px;
 }
-
 
 .smartTip {
 	position: relative;
