@@ -44,8 +44,8 @@ gulp.task('browser-sync', function() {
 
 // configure which files to watch and what tasks to use on file changes
 gulp.task('watch', function() {
-	// gulp.watch('js/**/*.js', ['jshint']);
+	gulp.watch('js/**/*.js', ['jshint']);
 	gulp.watch('css/**/*.scss', ['styles']);
 	gulp.watch('**/*.html', reload);
-	// gulp.watch('templates/*.jade', ['templates']);
+	gulp.watch('templates/*.jade', ['templates']);
 });

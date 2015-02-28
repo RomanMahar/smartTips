@@ -7,10 +7,11 @@ $(function() {
 // Our list of terms and their corresponding definitions
 var definitions = {
 	lorem : "A mark of class",
-	tooltip : "a message that appears when a cursor is positioned over an icon, image, hyperlink, or other element in a graphical user interface.",
-	smarttips: "smartTips is not a registered trademark.",
-  'web project': "You just have to include the smartTips.js script"
+	qui : "Icy and unforgiving",
+	smarttips: "This is "
 }
+
+
 
 // This function will find the strings in "words :" and surround them with a span tag
 $.fn.wrapInTag = function(opts) {
@@ -26,18 +27,13 @@ $.fn.wrapInTag = function(opts) {
   });
 };
 
-// for this demo file I have chosen to select strings 
-// within <h1 /> elements as well a <p /> elements
-// You can choose to look for strings in just <p /> or 
-// anything that you would like to search in really elements
-$('p, h1').wrapInTag({
+$('p').wrapInTag({
   tag: 'span class="smartTip"',
-  // applies Span tag to strings that match definitions.
+  // applies Span tag to definition keys
   definitions : definitions
 });
 
 
-// this will search in the span.smartTip and append the adds the trademark class to it.
 $.fn.appendTrademark = function(tm) {
   
   var tag = tm.tag || 'strong',
@@ -73,3 +69,27 @@ $('span.smartTip').on('mouseenter', function(){
 	$(this).find(".tooltip").remove();
 });
 
+
+
+// var employees = [
+//     {"firstName":"John", "lastName":"Doe"},
+//     {"firstName":"Anna", "lastName":"Smith"},
+//     {"firstName":"Peter","lastName": "Jones"}
+// ];
+
+/* 
+The following comments/notes were written by Ryan while he sat with me. 
+Ryan presents another way of doing this. 
+By creating a variable 'defs' and using bracket notation 
+I should be able to call the right text in the tooltip
+*/
+// var defs = {
+// 	apple : "a fruit red or green",
+// var text = $(this).text(); 
+// def[text] 
+// Would return value for apple key in object
+
+
+// On the note of what's written above I will next have to figure out how to define and store these terms
+
+// Next the following function is to make a tooltip div show up on hover
