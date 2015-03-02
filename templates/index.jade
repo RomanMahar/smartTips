@@ -5,9 +5,7 @@ html
     meta(http-equiv='X-UA-Compatible', content='chrome=1')
     title smartTips by RomanMahar
     link(href='http://fonts.googleapis.com/css?family=Open+Sans:100,300,400,500,600,700,800,900' rel='stylesheet' type='text/css')
-    link(rel='stylesheet', href='stylesheets/pygment_trac.css')
     link(rel='stylesheet' href='css/main.css')
-    script(src='javascripts/respond.js')
     //if lt IE 9
       script(src='//html5shiv.googlecode.com/svn/trunk/html5.js')
     //if lt IE 8
@@ -32,6 +30,7 @@ html
       #title
         h1 smartTips
         p the dynamic jQuery tooltips plugin
+        p (hover over the dark blue words)
         a(href="https://github.com/romanmahar/smartTips/fork") Fork on GitHub          
     .wrapper
       section.topcredits 
@@ -59,58 +58,31 @@ html
         h3
           | How does it work?
         p
-          | It's deceptively simple.
+          | It's simple.
           | To get started, all you have to do is:
           ol
             li get the smartTips repo
             li include the smartTips.js file in your project
             li open the smartTips.js file
             li enter 'word' : 'definition' under 'var definitions'
+            li style the classes .smartTip and .tooltip 
+            li (optional) use the use the files in the the css folder to get started quickly 
+        p
+          | Here are the definitions I used for this demo page.
         pre.
           var definitions = {
-            lorem : "A mark of class",
             tooltips : "Messages that appear when a cursor is positioned over a term, icon, image, hyperlink, or other element in a graphical user interface.",
-            smarttips: "smartTips is not a registered trademark.",
-            'web project': "You just have to include the smartTips.js script"
+            smarttips: "The smart and easy tooltip generator",
+            'web project': "You just have to include the smartTips.js script",
+            plugin : "In computing, a plug-in (or add-in / addin, plugin, extension or add-on / addon) is a software component that adds a specific feature to an existing application. When an application supports plug-ins, it enables customization.",
+            ' is that' : "Answer: pretty effing cool!",
+            'corresponding text' : "You just put in the term and the definition. The plugin does the rest",
+            'romanmahar' : "Professional alias and anagram for OmarRahman, creator of this plugin",
+            webpage : "A web page (or webpage) is a web document that is suitable for the World Wide Web and the web browser.",
+            'class of .smarttip' : "The default class that is applied to the span that surrounds the word. This lets you style the smartTip however you want",
+            '.smarttip ' : "The span class surrounding each of the definition words",
+            '.tooltip ' : "the class of the tooltip popup",
+            ' tooltip ' : "One of these"
           }
-        p
-          | If you&apos;re using the GitHub for Mac, simply sync your repository and you&apos;ll see the new branch.
-      h3
-        a#rather-drive-stick.anchor(href='#rather-drive-stick', aria-hidden='true')
-          span.octicon.octicon-link
-        | Rather Drive Stick?
-      p
-        | If you prefer to not use the automatic generator, push a branch named 
-        code gh-pages
-        |  to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.
-      h3
-        a#authors-and-contributors.anchor(href='#authors-and-contributors', aria-hidden='true')
-          span.octicon.octicon-link
-        | Authors and Contributors
-      p
-        | You can 
-        a.user-mention(href='https://github.com/blog/821') @mention
-        |  a GitHub username to generate a link to their profile. The resulting 
-        code &lt;a&gt;
-        |  element will link to the contributor&apos;s GitHub Profile. For example: In 2007, Chris Wanstrath (
-        a.user-mention(href='https://github.com/defunkt') @defunkt
-        | ), PJ Hyett (
-        a.user-mention(href='https://github.com/pjhyett') @pjhyett
-        | ), and Tom Preston-Werner (
-        a.user-mention(href='https://github.com/mojombo') @mojombo
-        | ) founded GitHub.
-      h3
-        a#support-or-contact.anchor(href='#support-or-contact', aria-hidden='true')
-          span.octicon.octicon-link
-        | Support or Contact
-      p
-        | Having trouble with Pages? Check out the documentation at 
-        a(href='https://help.github.com/pages') https://help.github.com/pages
-        |  or contact 
-        a(href='mailto:support@github.com') support@github.com
-        |  and we&rsquo;ll help you sort it out.
-    //if !IE
-      script.
-        fixScale(document);
   script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
   script(src="js/smartTips.js")

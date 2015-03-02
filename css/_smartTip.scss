@@ -4,7 +4,7 @@
 $smartTip : #1c2a43;
 $mainColor: #29aed9;
 $tipBG: #ffeeaa;
-$tipOL: #fffeda;
+$tipOL: rgba(0,0,0,0);
 
 // MIXINS 
 @mixin width {
@@ -52,7 +52,6 @@ h1 .smartTip {
 .tooltip:after, .tooltip:before {
 	top: 100%;
 	left: 50%;
-	transform: translateX(-8%);
 	border: solid transparent;
 	content: " ";
 	height: 0;
