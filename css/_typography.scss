@@ -1,0 +1,58 @@
+// VARIABLES 
+$smartTip : #1c2a43;
+$mainColor: #29aed9;
+
+
+
+// MIXINS 
+@mixin width {
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+// Typography 
+
+.wrapper a {
+	text-decoration: none;
+	color: #fff;
+	border-bottom: 1px dashed white;
+	&:hover {
+		color: $smartTip;
+	}
+}
+
+h1 {
+	font-size: 120px;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #fff;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+h3 {
+	font-size: 60px;
+	letter-spacing: 2px;
+}
+
+p {
+	font-size: 20px;
+	margin: 40px 0;
+}
+ol {
+	margin-left: 10%;
+}
+
+ol li {
+	font-size: 2em;
+	font-weight: 100;
+	letter-spacing: 1.8px;
+	line-height: 2;
+}
+
+.hero p {
+	font-size: 2em;
+	padding: 0;
+	margin: 0;
+	margin-top: -20px;
+}

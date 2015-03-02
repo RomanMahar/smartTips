@@ -1,53 +1,85 @@
-$green : #BADA55;
-$rouge : #f44008;
-$width : 1000px;
-$smartTipBrdr: solid $rouge 10px;
+@import '_smartTip.scss';
+@import '_setup.scss';
+@import '_header.scss';
+@import '_typography.scss';
+@import '_code.scss';
+
+// VARIABLES 
+$smartTip : #1c2a43;
+$mainColor: #29aed9;
+
+
+
+// MIXINS 
+@mixin width {
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@mixin linkButton {
+		border: 1px solid white;
+		font-size: 1.2em;
+		padding: 10px 20px;
+		border-radius: 2px;
+		text-decoration: none;
+		color: white;
+		background:$mainColor;
+		transition: background 0.3s, color 0.1s;
+			&:hover {
+			background:white;
+			color:$mainColor;
+			}
+}
+
+//main ELEMENTS, CLASSES, IDs... sections
+body {
+  padding: 0px 0 20px 0px;
+  margin: 0px;
+  font: 14px/1.5 "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #f5efe5;
+  background: $mainColor;
+}
+
+section {
+	padding: 100px 0;
+}
+
 
 .wrapper {
-	width: $width;
-	border: 2px solid lighten($green, 50%);
-	a {
-		color: $rouge;
-	}
-	li {
-		border: $smartTipBrdr;
-		background: $green;
-	}
+	@include width;
 }
 
-body {
-	// color : $rouge;
-	padding: 100px;
+.content {
+
 }
 
-.smartTip {
-	position: relative;
-	color: red;
-	font-size: 2em;
-	cursor: pointer;
+.hero {
+	padding: 100px 0 50px 0;
+	margin: 0 auto;
 }
 
-
-.trademark {
-	transform: rotate(3deg);
-	display: inline-block;
+#title {
+	@include width;
+	margin: 70px auto 100px auto;
+		p {
+			margin-bottom: 26px;
+		}
+		a { 
+		@include linkButton;
+		}
 }
 
-.trademark:after {
-	content: '™';
-	color: rgba(21,21,21,0.5);
+section.topcredits {
+	padding: 0 0 75px 0;
+	margin: 0;
 }
 
-.tooltip {
-	position: absolute;
-	padding: 5px;
-	bottom: 100%;
-	left: 50%;
-	height: 100px;
-	width: 100px;
-	transform: translateX(-50%);
-	background: rgba(0,0,0,0.75);
-	font-size: 0.5em;
-	color: white;
+section .credits.left {
+  float: left;
 }
+section .credits.right {
+  float: right;
+}
+
 
